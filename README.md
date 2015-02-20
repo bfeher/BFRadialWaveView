@@ -153,23 +153,25 @@ Add the _BFRadialWaveView_ header and implementation file to your project. (.h &
 
 ### Working Example
 ```objective-c
-BFRadialWaveView *radialWaveView = [[BFRadialWaveView alloc] initWithView:self.view
-                                                                      circles:BFRadialWaveView_DefaultNumberOfCircles
-                                                                        color:nil
-                                                                         mode:BFRadialWaveViewMode_Default
-                                                                  strokeWidth:BFRadialWaveView_DefaultStrokeWidth
-                                                                 withGradient:YES];
+BFRadialWaveView *radialWaveView;
+radialWaveView = [[BFRadialWaveView alloc] initWithView:self.view
+                                                circles:BFRadialWaveView_DefaultNumberOfCircles
+                                                  color:nil
+                                                   mode:BFRadialWaveViewMode_Default
+                                            strokeWidth:BFRadialWaveView_DefaultStrokeWidth
+                                           withGradient:YES];
 [radialWaveView show];
 ```
 
 ### Customized Example
 ```objective-c
-BFRadialWaveView *radialWaveView = [[BFRadialWaveView alloc] initWithView:self.view
-                                                                  circles:10
-                                                                    color:[UIColor paperColorGray800]
-                                                                     mode:BFRadialWaveViewMode_North
-                                                              strokeWidth:5.f
-                                                             withGradient:NO];
+BFRadialWaveView *radialWaveView;
+radialWaveView = [[BFRadialWaveView alloc] initWithView:self.view
+                                                circles:10
+                                                  color:[UIColor paperColorGray800]
+                                                   mode:BFRadialWaveViewMode_North
+                                            strokeWidth:5.f
+                                           withGradient:NO];
 [radialWaveView disco:YES];	// DISCO TAIMU NAU!
 [radialWaveView showProgress:someProgressBetweenZeroAndOne];
 ```
@@ -190,4 +192,4 @@ License
 --------
 _BFRadialWaveView_ uses the MIT License:
 
-> Please see included [LICENSE file](https://raw.githubusercontent.com/bfeher/BFRadialWaveView/master/LICENSE.md).
+> Please see included [LICENSE file](https://raw.githubusercontent.com/bfeher/BFRadialWaveView/master/LICENSE).
