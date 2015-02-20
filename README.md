@@ -58,13 +58,14 @@ Methods
 
 ```
 
-## Loading
+
+### Loading
 ```objective-c
 /** Show a basic view with no progress. */
 - (void)show;
 ```
 
-## Progress
+### Progress
 ```objective-c
 /**
  *  Show a view with progress.
@@ -74,19 +75,19 @@ Methods
 - (void)showProgress:(CGFloat)progress;
 ```
 
-## Success
+### Success
 ```objective-c
 /** Show a success view. */
 - (void)showSuccess;
 ```
 
-## Error
+### Error
 ```objective-c
 /** Show an error view. */
 - (void)showError;
 ```
 
-## Update
+### Update
 ```objective-c
 /**
  *  Update the progress to a certain value.
@@ -114,7 +115,7 @@ Methods
 - (void)updateProgressCircleColor:(UIColor *)color;
 ```
 
-## Fun
+### Fun
 ```objective-c
 /**
  *  Activate or deactivate disco mode.
@@ -128,10 +129,25 @@ Methods
 
 Properties
 ---------
-`someProp` <br />
-SomeProp description.
+```objective-c
+/** The diameter of the view (including progress circle). */
+@property (nonatomic, readonly) CGFloat diameter;
 
+/** The color to set the success checkmark to. By default it is the same as the circleColor passed into the initializer or the setup. */
+@property UIColor *checkmarkColor;
 
+/** The color to set the failure cross to. By default it is the same as the circleColor passed into the initializer or the setup. */
+@property UIColor *crossColor;
+
+/** An NSArray of colors to use for disco mode. By default it is the rainbow. */
+@property (nonatomic) NSArray *discoColors;
+
+/** CGFloat speed for the disco animation. Default is 0.33f. */
+@property (nonatomic) CGFloat discoSpeed;
+
+/** BFRadialWaveViewDelegate delegate for our protocol. */
+@property id <BFRadialWaveViewDelegate> delegate;
+```
 
 Usage
 ---------
