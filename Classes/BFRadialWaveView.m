@@ -223,6 +223,7 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
         [self.topCircleLayers addObject:topCircleLayer];
         [self.bottomCircleLayers addObject:bottomCircleLayer];
     }
+    [self.container addSubview:self];
 }
 
 - (void)drawCircles
