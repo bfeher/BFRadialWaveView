@@ -57,8 +57,7 @@ Methods
          withGradient:(BOOL)withGradient;
 
 ```
-
-
+<br />
 ### Loading
 ```objective-c
 /** Show a basic view with no progress. */
@@ -156,11 +155,25 @@ Add the _BFRadialWaveView_ header and implementation file to your project. (.h &
 ### Working Example
 *(Taken directly from example project.)*<br />
 ```objective-c
+BFRadialWaveView *radialWaveView = [[BFRadialWaveView alloc] initWithView:self.view
+                                                                      circles:BFRadialWaveView_DefaultNumberOfCircles
+                                                                        color:nil
+                                                                         mode:BFRadialWaveViewMode_Default
+                                                                  strokeWidth:BFRadialWaveView_DefaultStrokeWidth
+                                                                 withGradient:YES];
+[radialWaveView show];
 ```
 
 ### Customized Example
 *(Taken directly from example project.)*<br />
 ```objective-c
+BFRadialWaveView *radialWaveView = [[BFRadialWaveView alloc] initWithView:self.view
+                                                                  circles:10
+                                                                    color:[UIColor paperColorGray800]
+                                                                     mode:BFRadialWaveViewMode_North
+                                                              strokeWidth:5.f
+                                                             withGradient:NO];
+[radialWaveView showProgress:someProgressBetweenZeroAndOne];
 ```
 
 Cocoapods

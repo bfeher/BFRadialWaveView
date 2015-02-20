@@ -58,7 +58,6 @@ BOOL showSuccess;
     [self.radialWave disco:self.discoSwitch.isOn];
     self.radialWave.frame = self.view.bounds;
 
-//    [self.view addSubview:self.radialWave];
     [self.radialWave show];
     [self.view sendSubviewToBack:self.radialWave];
 }
@@ -100,7 +99,6 @@ BOOL showSuccess;
                                                  strokeWidth:self.strokeWidth
                                                 withGradient:self.gradientSwitch.isOn];
     [self.radialWave disco:self.discoSwitch.isOn];
-//    [self.view addSubview:self.radialWave];
     [self.radialWave show];
     [self.view sendSubviewToBack:self.radialWave];
 }
@@ -118,7 +116,6 @@ BOOL showSuccess;
                                                  strokeWidth:self.strokeWidth
                                                 withGradient:self.gradientSwitch.isOn];
     [self.radialWave disco:self.discoSwitch.isOn];
-//    [self.view addSubview:self.radialWave];
     [self.radialWave show];
     [self.view sendSubviewToBack:self.radialWave];
 }
@@ -136,7 +133,6 @@ BOOL showSuccess;
                                                  strokeWidth:self.strokeWidth
                                                 withGradient:self.gradientSwitch.isOn];
     [self.radialWave disco:self.discoSwitch.isOn];
-//    [self.view addSubview:self.radialWave];
     [self.radialWave show];
     [self.view sendSubviewToBack:self.radialWave];
 }
@@ -156,7 +152,6 @@ BOOL showSuccess;
                                                  strokeWidth:self.strokeWidth
                                                 withGradient:self.gradientSwitch.isOn];
     [self.radialWave disco:self.discoSwitch.isOn];
-//    [self.view addSubview:self.radialWave];
     [self.radialWave show];
     [self.view sendSubviewToBack:self.radialWave];
 }
@@ -203,7 +198,6 @@ BOOL showSuccess;
                                                          strokeWidth:self.strokeWidth
                                                         withGradient:self.gradientSwitch.isOn];
             [self.radialWave disco:self.discoSwitch.isOn];
-//            [self.view addSubview:self.radialWave];
             [self.radialWave show];
             [self.view sendSubviewToBack:self.radialWave];
             self.showProgressButton.enabled = YES;
