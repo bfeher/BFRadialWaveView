@@ -9,7 +9,7 @@ BFRadialWaveView
 
 About
 ---------
-_BFRadialWaveView_ is a sublcass of UIView. It displays a radial wave with various options. It was made to be the progress/spinner view for ![BFRadialWaveHUD]().
+_BFRadialWaveView_ is a sublcass of UIView. It displays a radial wave with various options. It was made to be the progress/spinner view for [BFRadialWaveHUD]().
 
 Methods
 ---------
@@ -35,9 +35,8 @@ Methods
                  strokeWidth:(CGFloat)strokeWidth
                 withGradient:(BOOL)withGradient;
 ```
- <br />
 
- ## Setup
+## Setup
 >Use this when you made a BFRadialWaveView in the storyboard or xib
 ```objective-c
 /**
@@ -58,6 +57,73 @@ Methods
          withGradient:(BOOL)withGradient;
 
 ```
+
+## Loading
+```objective-c
+/** Show a basic view with no progress. */
+- (void)show;
+```
+
+## Progress
+```objective-c
+/**
+ *  Show a view with progress.
+ *
+ *  @param progress CGFloat between 0.f and 1.f. The progress to show.
+ */
+- (void)showProgress:(CGFloat)progress;
+```
+
+## Success
+```objective-c
+/** Show a success view. */
+- (void)showSuccess;
+```
+
+## Error
+```objective-c
+/** Show an error view. */
+- (void)showError;
+```
+
+## Update
+```objective-c
+/**
+ *  Update the progress to a certain value.
+ *
+ *  @param progress CGFloat between 0.f and 1.f. The progress to show.
+ */
+- (void)updateProgress:(CGFloat)progress;
+```
+
+```objective-c
+/**
+ *  Update the circle color on the fly.
+ *
+ *  @param color UIColor to set the circles' strokeColor to.
+ */
+- (void)updateCircleColor:(UIColor *)color;
+```
+
+```objective-c
+/**
+ *  Update the progress circle color on the fly.
+ *
+ *  @param color UIColor to set the progress circle's strokeColor to.
+ */
+- (void)updateProgressCircleColor:(UIColor *)color;
+```
+
+## Fun
+```objective-c
+/**
+ *  Activate or deactivate disco mode.
+ *
+ *  @param on BOOL flag to turn disco mode on (YES) or off (NO).
+ */
+- (void)disco:(BOOL)on;
+```
+
 
 
 Properties
