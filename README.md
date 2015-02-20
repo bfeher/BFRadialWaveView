@@ -55,9 +55,8 @@ Methods
                  mode:(BFRadialWaveViewMode)mode
           strokeWidth:(CGFloat)strokeWidth
          withGradient:(BOOL)withGradient;
-
 ```
-<br />
+
 ### Loading
 ```objective-c
 /** Show a basic view with no progress. */
@@ -153,7 +152,6 @@ Usage
 Add the _BFRadialWaveView_ header and implementation file to your project. (.h & .m)
 
 ### Working Example
-*(Taken directly from example project.)*<br />
 ```objective-c
 BFRadialWaveView *radialWaveView = [[BFRadialWaveView alloc] initWithView:self.view
                                                                       circles:BFRadialWaveView_DefaultNumberOfCircles
@@ -165,7 +163,6 @@ BFRadialWaveView *radialWaveView = [[BFRadialWaveView alloc] initWithView:self.v
 ```
 
 ### Customized Example
-*(Taken directly from example project.)*<br />
 ```objective-c
 BFRadialWaveView *radialWaveView = [[BFRadialWaveView alloc] initWithView:self.view
                                                                   circles:10
@@ -173,6 +170,7 @@ BFRadialWaveView *radialWaveView = [[BFRadialWaveView alloc] initWithView:self.v
                                                                      mode:BFRadialWaveViewMode_North
                                                               strokeWidth:5.f
                                                              withGradient:NO];
+[radialWaveView disco:YES];	// DISCO TAIMU NAU!
 [radialWaveView showProgress:someProgressBetweenZeroAndOne];
 ```
 

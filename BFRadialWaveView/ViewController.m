@@ -56,8 +56,6 @@ BOOL showSuccess;
                                                  strokeWidth:self.strokeWidth
                                                 withGradient:self.gradientSwitch.isOn];
     [self.radialWave disco:self.discoSwitch.isOn];
-    self.radialWave.frame = self.view.bounds;
-
     [self.radialWave show];
     [self.view sendSubviewToBack:self.radialWave];
 }
