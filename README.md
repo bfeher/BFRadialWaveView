@@ -11,6 +11,21 @@ About
 ---------
 _BFRadialWaveView_ is a sublcass of UIView. It displays a radial wave with various options. It was made to be the progress/spinner view for [BFRadialWaveHUD]().
 
+Modes
+---------
+```objective-c
+BFRadialWaveViewMode_Default       // Default: A swirly looking thing.
+BFRadialWaveViewMode_KuneKune      // Kune Kune: A creepy feeler looking thing.
+BFRadialWaveViewMode_North         // North: Points upwards.
+BFRadialWaveViewMode_NorthEast     // North East: Points upwards to the right.
+BFRadialWaveViewMode_East          // East: Points right.
+BFRadialWaveViewMode_SouthEast     // South East: Points downwards to the right.
+BFRadialWaveViewMode_South         // South: Points down.
+BFRadialWaveViewMode_SouthWest     // South West: Points downwards to the left.
+BFRadialWaveViewMode_West          // West: Points left.
+BFRadialWaveViewMode_NorthWest     // North West: Points at Kanye.
+```
+
 Methods
 ---------
 ## Initializer

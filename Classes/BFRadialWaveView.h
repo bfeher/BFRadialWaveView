@@ -9,16 +9,16 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, BFRadialWaveViewMode) {
-    BFRadialWaveViewMode_Default,
-    BFRadialWaveViewMode_KuneKune,
-    BFRadialWaveViewMode_North,
-    BFRadialWaveViewMode_NorthEast,
-    BFRadialWaveViewMode_East,
-    BFRadialWaveViewMode_SouthEast,
-    BFRadialWaveViewMode_South,
-    BFRadialWaveViewMode_SouthWest,
-    BFRadialWaveViewMode_West,
-    BFRadialWaveViewMode_NorthWest,
+    BFRadialWaveViewMode_Default,       // Default: A swirly looking thing.
+    BFRadialWaveViewMode_KuneKune,      // Kune Kune: A creepy feeler looking thing.
+    BFRadialWaveViewMode_North,         // North: Points upwards.
+    BFRadialWaveViewMode_NorthEast,     // North East: Points upwards to the right.
+    BFRadialWaveViewMode_East,          // East: Points right.
+    BFRadialWaveViewMode_SouthEast,     // South East: Points downwards to the right.
+    BFRadialWaveViewMode_South,         // South: Points down.
+    BFRadialWaveViewMode_SouthWest,     // South West: Points downwards to the left.
+    BFRadialWaveViewMode_West,          // West: Points left.
+    BFRadialWaveViewMode_NorthWest,     // North West: Points at Kanye.
 };
 
 extern NSInteger const BFRadialWaveView_DefaultNumberOfCircles;
