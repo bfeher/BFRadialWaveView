@@ -4,7 +4,7 @@ BFRadialWaveView
 
 > A mesmerizing view with lots of options. It is meant to be used with [BFRadialWaveHUD](), but you are free to take it :) 
 
-![Animated Screenshot]("Animated Screenshot")
+![Animated Screenshot](https://raw.githubusercontent.com/bfeher/BFRadialWaveView/master/BFRadialWaveViewDemo.gif "Animated Screenshot")
 
 
 About
