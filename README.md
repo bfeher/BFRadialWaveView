@@ -14,31 +14,31 @@ _BFRadialWaveView_ is a sublcass of UIView. It displays a radial wave with vario
 Methods
 ---------
 ## Initializer
-!Use this when you make a BFRadialWaveView in code.
+>Use this when you make a BFRadialWaveView in code.
 ```objective-c
 /**
-*  Custom initializer. Use this when you make a BFRadialWaveView in code.
-*
-*  @param container       A UIView to place this one in.
-*  @param numberOfCircles NSInteger number of circles. Min = 3, Max = 20.
-*  @param circleColor     UIColor to set the circles' strokeColor to.
-*  @param mode            BFRadialWaveViewMode.
-*  @param strokeWidth     CGFloat stroke width of the circles.
-*  @param withGradient    BOOL flag to decide whether or not to draw a gradient in the background.
-*
-*  @return Returns A BFRadialWaveView! Aww yiss!
-*/
+ *  Custom initializer. Use this when you make a BFRadialWaveView in code.
+ *
+ *  @param container       A UIView to place this one in.
+ *  @param numberOfCircles NSInteger number of circles. Min = 3, Max = 20.
+ *  @param circleColor     UIColor to set the circles' strokeColor to.
+ *  @param mode            BFRadialWaveViewMode.
+ *  @param strokeWidth     CGFloat stroke width of the circles.
+ *  @param withGradient    BOOL flag to decide whether or not to draw a gradient in the background.
+ *
+ *  @return Returns A BFRadialWaveView! Aww yiss!
+ */
 - (instancetype)initWithView:(UIView *)container
-circles:(NSInteger)numberOfCircles
-color:(UIColor *)circleColor
-mode:(BFRadialWaveViewMode)mode
-strokeWidth:(CGFloat)strokeWidth
-withGradient:(BOOL)withGradient;
+                     circles:(NSInteger)numberOfCircles
+                       color:(UIColor *)circleColor
+                        mode:(BFRadialWaveViewMode)mode
+                 strokeWidth:(CGFloat)strokeWidth
+                withGradient:(BOOL)withGradient;
 ```
  <br />
 
  ## Setup
-!Use this when you made a BFRadialWaveView in the storyboard or xib
+>Use this when you made a BFRadialWaveView in the storyboard or xib
 ```objective-c
 /**
  *  Setup. Use this when you made a BFRadialWaveView in the storyboard or xib.
@@ -89,7 +89,7 @@ Learn more at http://cocoapods.org
 
 Add this to your podfile to add BFRadialWaveView to your project.
 ```ruby
-platform :ios, '7.0'
+platform :ios, '7.1'
 ```
 
 
