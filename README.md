@@ -2,14 +2,14 @@ BFRadialWaveView
 =============
 [![CocoaPods](https://img.shields.io/cocoapods/v/BFRadialWaveView.svg?style=flat)](https://github.com/bfeher/BFRadialWaveView)
 
-> A mesmerizing view with lots of options. It is meant to be used with [BFRadialWaveHUD](), but you are free to take it :) 
+> A mesmerizing view with lots of options. It is meant to be used with [BFRadialWaveHUD](https://github.com/bfeher/BFRadialWaveHUD), but you are free to take it :) 
 
 ![Animated Screenshot](https://raw.githubusercontent.com/bfeher/BFRadialWaveView/master/BFRadialWaveViewDemo.gif "Animated Screenshot")
 
 
 About
 ---------
-_BFRadialWaveView_ is a sublcass of UIView. It displays a radial wave with various options. It was made to be the progress/spinner view for [BFRadialWaveHUD]().
+_BFRadialWaveView_ is a sublcass of UIView. It displays a radial wave with various options. It was made to be the progress/spinner view for [BFRadialWaveHUD](https://github.com/bfeher/BFRadialWaveHUD).
 
 Modes
 ---------
@@ -164,6 +164,8 @@ Properties
 
 Usage
 ---------
+>Be sure the check out the included demo app to see examples on how to use BFRadialWaveView.
+
 Add the _BFRadialWaveView_ header and implementation file to your project. (.h & .m)
 
 ### Working Example
@@ -187,7 +189,7 @@ radialWaveView = [[BFRadialWaveView alloc] initWithView:self.view
                                                    mode:BFRadialWaveViewMode_North
                                             strokeWidth:5.f
                                            withGradient:NO];
-[radialWaveView disco:YES];	// DISCO TAIMU NAU!
+[radialWaveView disco:YES];   // Disco time!
 [radialWaveView showProgress:someProgressBetweenZeroAndOne];
 ```
 
@@ -200,6 +202,7 @@ Learn more at http://cocoapods.org
 Add this to your podfile to add BFRadialWaveView to your project.
 ```ruby
 platform :ios, '7.1'
+pod 'BFRadialWaveView', '~> 1.1.24'
 ```
 
 
