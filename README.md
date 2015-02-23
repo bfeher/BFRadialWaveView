@@ -131,7 +131,7 @@ Methods
 ### Fun
 ```objective-c
 /**
- *  Activate or deactivate disco mode.
+ *  Activate of Deactivate disco mode! This will rapidly cycle colors through your BFRadialWaveView. Without setting the colors explicitly, a rainbow is used.
  *
  *  @param on BOOL flag to turn disco mode on (YES) or off (NO).
  */
