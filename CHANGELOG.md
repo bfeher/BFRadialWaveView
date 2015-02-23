@@ -7,6 +7,6 @@ BFRadialWaveView
 
 1.2.1
 ---------
-+ Added a changelog!
-- Removed `- (void)updateProgressCircleColor:(UIColor *)color` and replaced it with the property `UIColor *progressCircleColor`.
-^ Fixed bug where checkmarkColor and crossColor weren't being updated properly.
++ + Added a changelog!
+- - Removed `- (void)updateProgressCircleColor:(UIColor *)color` and replaced it with the property `UIColor *progressCircleColor`.
++ ^ Fixed bug where checkmarkColor and crossColor weren't being updated properly.

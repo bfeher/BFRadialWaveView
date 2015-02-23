@@ -119,15 +119,6 @@ Methods
 - (void)updateCircleColor:(UIColor *)color;
 ```
 
-```objective-c
-/**
- *  Update the progress circle color on the fly.
- *
- *  @param color UIColor to set the progress circle's strokeColor to.
- */
-- (void)updateProgressCircleColor:(UIColor *)color;
-```
-
 ### Fun
 ```objective-c
 /**
