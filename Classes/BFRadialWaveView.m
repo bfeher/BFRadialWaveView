@@ -126,6 +126,28 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
     self.progressCircle.strokeEnd = progress;
 }
 
+- (void)setProgressCircleColor:(UIColor *)progressCircleColor
+{
+    if (!progressCircleColor) { return; }
+    
+    _progressCircleColor = progressCircleColor;
+    self.progressCircle.strokeColor = progressCircleColor.CGColor;
+}
+
+- (void)setCheckmarkColor:(UIColor *)checkmarkColor
+{
+    if (!checkmarkColor) { return; }
+    _checkmarkColor = checkmarkColor;
+    self.checkmarkLayer.strokeColor = checkmarkColor.CGColor;
+}
+
+- (void)setCrossColor:(UIColor *)crossColor
+{
+    if (!crossColor) { return; }
+    _crossColor = crossColor;
+    self.crossLayer.strokeColor = crossColor.CGColor;
+}
+
 - (void)setDiscoColors:(NSArray *)discoColors
 {
     _discoColors = discoColors;
@@ -187,6 +209,7 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
     self.mode = mode;
     self.centerPoint = CGPointMake(CGRectGetMidX(self.bounds),
                                    CGRectGetMidY(self.bounds));
+    self.progressCircleColor = circleColor;
     self.checkmarkColor = self.circleColor;
     self.crossColor = self.circleColor;
     self.atTheDisco = NO;
@@ -375,7 +398,7 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
     //    self.progressCircle.position = CGPointMake(self.centerPoint.x /*- radius*/, self.centerPoint.y /*- radius*/);
     self.progressCircle.position = CGPointMake(self.centerPoint.x, self.centerPoint.y);
     self.progressCircle.fillColor = [UIColor clearColor].CGColor;
-    self.progressCircle.strokeColor = self.circleColor ? self.circleColor.CGColor : [UIColor blackColor].CGColor;
+    self.progressCircle.strokeColor = self.progressCircleColor.CGColor;
     self.progressCircle.lineWidth = self.lineWidth;
     self.progressCircle.strokeEnd = progress;
     
@@ -448,11 +471,6 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
     }
 }
 
-- (void)updateProgressCircleColor:(UIColor *)color
-{
-    if (!color) { return; }
-    self.progressCircle.strokeColor = color.CGColor;
-}
 
 - (void)repositionCircles
 {

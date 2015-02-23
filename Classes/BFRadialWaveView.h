@@ -123,17 +123,10 @@ extern CGFloat const BFRadialWaveView_DefaultStrokeWidth;
  */
 - (void)updateCircleColor:(UIColor *)color;
 
-/**
- *  Update the progress circle color on the fly.
- *
- *  @param color UIColor to set the progress circle's strokeColor to.
- */
-- (void)updateProgressCircleColor:(UIColor *)color;
-
 
 #pragma mark - Fun
 /**
- *  Activate of Deactivate disco mode! This will rapidly cycle colors through your BFRadialWaveView. Without setting the colors explicitly, a rainbow is used.
+ *  Activate or deactivate disco mode.
  *
  *  @param on BOOL flag to turn disco mode on (YES) or off (NO).
  */
@@ -144,11 +137,14 @@ extern CGFloat const BFRadialWaveView_DefaultStrokeWidth;
 /** The diameter of the view (including progress circle). */
 @property (nonatomic, readonly) CGFloat diameter;
 
-/** The color to set the success checkmark to. By default it is the same as the circleColor passed into the initializer or the setup. */
-@property UIColor *checkmarkColor;
+/** The UIColor to set the progress circle to. Default is the same as the circleColor passed into the initializer or the setup. */
+@property (nonatomic) UIColor *progressCircleColor;
 
-/** The color to set the failure cross to. By default it is the same as the circleColor passed into the initializer or the setup. */
-@property UIColor *crossColor;
+/** The UIColor to set the success checkmark to. By default it is the same as the circleColor passed into the initializer or the setup. */
+@property (nonatomic) UIColor *checkmarkColor;
+
+/** The UIColor to set the failure cross to. By default it is the same as the circleColor passed into the initializer or the setup. */
+@property (nonatomic) UIColor *crossColor;
 
 /** An NSArray of colors to use for disco mode. By default it is the rainbow. */
 @property (nonatomic) NSArray *discoColors;

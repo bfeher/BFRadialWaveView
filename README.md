@@ -146,11 +146,14 @@ Properties
 /** The diameter of the view (including progress circle). */
 @property (nonatomic, readonly) CGFloat diameter;
 
-/** The color to set the success checkmark to. By default it is the same as the circleColor passed into the initializer or the setup. */
-@property UIColor *checkmarkColor;
+/** The UIColor to set the progress circle to. Default is the same as the circleColor passed into the initializer or the setup. */
+@property (nonatomic) UIColor *progressCircleColor;
 
-/** The color to set the failure cross to. By default it is the same as the circleColor passed into the initializer or the setup. */
-@property UIColor *crossColor;
+/** The UIColor to set the success checkmark to. By default it is the same as the circleColor passed into the initializer or the setup. */
+@property (nonatomic) UIColor *checkmarkColor;
+
+/** The UIColor to set the failure cross to. By default it is the same as the circleColor passed into the initializer or the setup. */
+@property (nonatomic) UIColor *crossColor;
 
 /** An NSArray of colors to use for disco mode. By default it is the rainbow. */
 @property (nonatomic) NSArray *discoColors;
@@ -203,7 +206,7 @@ Learn more at http://cocoapods.org
 Add this to your podfile to add BFRadialWaveView to your project.
 ```ruby
 platform :ios, '7.1'
-pod 'BFRadialWaveView', '~> 1.1.24'
+pod 'BFRadialWaveView', '~> 1.2.1'
 ```
 
 
