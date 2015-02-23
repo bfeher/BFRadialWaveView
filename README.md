@@ -205,4 +205,4 @@ License
 --------
 _BFRadialWaveView_ uses the MIT License:
 
-> Please see included [LICENSE file](https://raw.githubusercontent.com/bfeher/BFRadialWaveView/master/LICENSE).
+> Please see included [LICENSE file](https://raw.githubusercontent.com/bfeher/BFRadialWaveView/master/LICENSE.md).
