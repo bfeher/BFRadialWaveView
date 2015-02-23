@@ -3,8 +3,10 @@ BFRadialWaveView
 [![CocoaPods](https://img.shields.io/cocoapods/v/BFRadialWaveView.svg?style=flat)](https://github.com/bfeher/BFRadialWaveView)
 
 > A mesmerizing view with lots of options. It is meant to be used with [BFRadialWaveHUD](https://github.com/bfeher/BFRadialWaveHUD), but you are free to take it :) 
+<br />
 
-![Animated Screenshot](https://raw.githubusercontent.com/bfeher/BFRadialWaveView/master/BFRadialWaveViewDemo.gif "Animated Screenshot")
+>_Click the screenshot below for an animated gifv!_<br />
+[![Animated Screenshot](https://raw.githubusercontent.com/bfeher/BFRadialWaveView/master/BFRadialWaveViewDemoFrame1.png)](http://i.imgur.com/KB9LbUm.gifv)
 
 
 About
