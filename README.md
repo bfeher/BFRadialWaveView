@@ -13,6 +13,17 @@ About
 ---------
 _BFRadialWaveView_ is a sublcass of UIView. It displays a radial wave with various options. It was made to be the progress/spinner view for [BFRadialWaveHUD](https://github.com/bfeher/BFRadialWaveHUD).
 
+
+Changes
+---------
+Please refer to this [CHANGELOG.md](https://github.com/bfeher/BFRadialWaveView/blob/master/CHANGELOG.md).
+
+
+To do:
+---------
++ Restart animations on app wake-up.
+
+
 Modes
 ---------
 ```objective-c
