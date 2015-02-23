@@ -6,7 +6,7 @@ BFRadialWaveView
 <br />
 
 >_Click the screenshot below for an animated gifv!_<br />
-[![Animated Screenshot](https://raw.githubusercontent.com/bfeher/BFRadialWaveView/master/BFRadialWaveViewDemoFrame1.png)](http://i.imgur.com/KB9LbUm.gifv)
+[![Animated Screenshot](https://raw.githubusercontent.com/bfeher/BFRadialWaveView/master/BFRadialWaveViewDemoFrame1.png)](http://i.imgur.com/blnYaNw.gifv)
 
 
 About
