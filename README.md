@@ -166,7 +166,8 @@ Usage
 ---------
 >Be sure the check out the included demo app to see examples on how to use BFRadialWaveView.
 
-Add the _BFRadialWaveView_ header and implementation file to your project. (.h & .m)
+Add the _BFRadialWaveView_ header and implementation files to your project. (BFRadialWaveView.h & BFRadialWaveView.m)
+as well as the _BFGradientCALayer_ header and implementation files to your project. (BFGradientLayer.h & BFGradientLayer.m)
 
 ### Working Example
 ```objective-c
