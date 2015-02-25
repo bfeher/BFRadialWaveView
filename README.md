@@ -21,7 +21,7 @@ Please refer to this [CHANGELOG.md](https://github.com/bfeher/BFRadialWaveView/b
 
 To do:
 ---------
-+ Restart animations on app wake-up.
++ ~~Restart animations on app wake-up.~~
 + ~~Move resources into a resource directory, reflecting this change in the cocoapod. (Fix file structure)~~
 
 

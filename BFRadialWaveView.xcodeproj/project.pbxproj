@@ -86,6 +86,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F456B2521A9D557B00FC729A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F4BF577C1A942572008A2BC2 /* BFGradientCALayer.h */,
+				F4BF577D1A942572008A2BC2 /* BFGradientCALayer.m */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		F4BF57451A942001008A2BC2 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				F4BF577B1A94253E008A2BC2 /* Classes */,
+				F456B2521A9D557B00FC729A /* Resources */,
 				F4BF57581A942001008A2BC2 /* ViewController.h */,
 				F4BF57591A942001008A2BC2 /* ViewController.m */,
 				F4BF575B1A942001008A2BC2 /* Main.storyboard */,
@@ -150,8 +160,6 @@
 		F4BF577B1A94253E008A2BC2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F4BF577C1A942572008A2BC2 /* BFGradientCALayer.h */,
-				F4BF577D1A942572008A2BC2 /* BFGradientCALayer.m */,
 				F4BF57781A94253A008A2BC2 /* BFRadialWaveView.h */,
 				F4BF57791A94253A008A2BC2 /* BFRadialWaveView.m */,
 			);
