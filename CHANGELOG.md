@@ -7,6 +7,11 @@ BFRadialWaveView
 
 1.3.1
 ---------
++ ^ Changing build settings to try and get the cocoapod working. Experimenting a bit here.
+
+
+1.3.1
+---------
 + ^ Animations now restart when app becomes active again after being sent to the background.
 + ^ Moved resources into a 'Resources' directory. Updated the podspec to reflect this.
 
