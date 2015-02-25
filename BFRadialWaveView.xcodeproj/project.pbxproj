@@ -46,8 +46,8 @@
 		F4BF576D1A942001008A2BC2 /* BFRadialWaveViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BFRadialWaveViewTests.m; sourceTree = "<group>"; };
 		F4BF57781A94253A008A2BC2 /* BFRadialWaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BFRadialWaveView.h; path = ../Classes/BFRadialWaveView.h; sourceTree = "<group>"; };
 		F4BF57791A94253A008A2BC2 /* BFRadialWaveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BFRadialWaveView.m; path = ../Classes/BFRadialWaveView.m; sourceTree = "<group>"; };
-		F4BF577C1A942572008A2BC2 /* BFGradientCALayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BFGradientCALayer.h; path = ../Classes/BFGradientCALayer.h; sourceTree = "<group>"; };
-		F4BF577D1A942572008A2BC2 /* BFGradientCALayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BFGradientCALayer.m; path = ../Classes/BFGradientCALayer.m; sourceTree = "<group>"; };
+		F4BF577C1A942572008A2BC2 /* BFGradientCALayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BFGradientCALayer.h; path = ../Resources/BFGradientCALayer.h; sourceTree = "<group>"; };
+		F4BF577D1A942572008A2BC2 /* BFGradientCALayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BFGradientCALayer.m; path = ../Resources/BFGradientCALayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

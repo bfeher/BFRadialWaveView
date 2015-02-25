@@ -30,6 +30,7 @@
 @property CAShapeLayer *checkmarkLayer;
 @property CAShapeLayer *crossLayer;
 @property BOOL atTheDisco;
+@property BOOL shouldRestartAnimationIfInterrupted;
 @end
 
 @implementation BFRadialWaveView
@@ -93,6 +94,10 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
     [self.radialGradientLayer setNeedsDisplay];
 }
 
+- (void)dealloc
+{
+    [self unregisterForNotifications];
+}
 
 #pragma mark - Setters and Getters
 - (NSMutableArray *)topCircleLayers
@@ -172,6 +177,24 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
 
 
 #pragma mark - Setup
+- (void)registerForNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(prepareForReenteringForeground)
+                                                 name:UIApplicationWillEnterForegroundNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(prepareToResignActive)
+                                                 name:UIApplicationWillResignActiveNotification
+                                               object:nil];
+}
+
+- (void)unregisterForNotifications
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)setupWithView:(UIView *)container
               circles:(NSInteger)numberOfCircles
                 color:(UIColor *)circleColor
@@ -247,6 +270,8 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
         [self.bottomCircleLayers addObject:bottomCircleLayer];
     }
     [self.container addSubview:self];
+    
+    [self registerForNotifications];
 }
 
 - (void)drawCircles
@@ -417,6 +442,7 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
 {
     [self drawCircles];
     [self drawProgressCircleWithProgress:progress];
+    self.shouldRestartAnimationIfInterrupted = YES;
 }
 
 
@@ -430,6 +456,7 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
     // Draw checkmark:
     [self removeCircles];
     [self drawCheckmark];
+    self.shouldRestartAnimationIfInterrupted = NO;
 }
 
 
@@ -448,6 +475,7 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
     // Draw 'X':
     [self removeCircles];
     [self drawCross];
+    self.shouldRestartAnimationIfInterrupted = NO;
 }
 
 
@@ -720,6 +748,20 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
     self.crossLayer.opacity = 1.f;
     [self.crossLayer addAnimation:drawCrossAnimation
                            forKey:bfDrawCrossAnimationKey];
+}
+
+
+#pragma mark - Notificaion Handlers
+- (void)prepareToResignActive
+{
+    [self.layer removeAllAnimations];
+}
+
+- (void)prepareForReenteringForeground
+{
+    if (self.shouldRestartAnimationIfInterrupted) {
+        [self showProgress:self.progress];
+    }
 }
 
 

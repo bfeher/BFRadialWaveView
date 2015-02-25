@@ -22,7 +22,7 @@ Please refer to this [CHANGELOG.md](https://github.com/bfeher/BFRadialWaveView/b
 To do:
 ---------
 + Restart animations on app wake-up.
-+ Move resources into a resource directory, reflecting this change in the cocoapod. (Fix file structure)
++ ~~Move resources into a resource directory, reflecting this change in the cocoapod. (Fix file structure)~~
 
 
 Modes
@@ -211,7 +211,7 @@ Learn more at http://cocoapods.org
 Add this to your podfile to add BFRadialWaveView to your project.
 ```ruby
 platform :ios, '7.1'
-pod 'BFRadialWaveView', '~> 1.2.1'
+pod 'BFRadialWaveView', '~> 1.3.1'
 ```
 
 
