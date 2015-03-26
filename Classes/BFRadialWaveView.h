@@ -132,6 +132,11 @@ extern CGFloat const BFRadialWaveView_DefaultStrokeWidth;
  */
 - (void)disco:(BOOL)on;
 
+#pragma mark - Pause and Resume
+-(void)pauseAnimation;
+-(void)resumeAnimation;
+-(BOOL)isPaused;
+
 
 #pragma mark - Properties
 /** The diameter of the view (including progress circle). */
@@ -154,5 +159,6 @@ extern CGFloat const BFRadialWaveView_DefaultStrokeWidth;
 
 /** BFRadialWaveViewDelegate delegate for our protocol. */
 @property id <BFRadialWaveViewDelegate> delegate;
+
 
 @end
