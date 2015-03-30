@@ -55,7 +55,7 @@ extern CGFloat const BFRadialWaveView_DefaultStrokeWidth;
  *  @param strokeWidth     CGFloat stroke width of the circles.
  *  @param withGradient    BOOL flag to decide whether or not to draw a gradient in the background.
  *
- *  @return Returns A BFRadialWaveView! Aww yiss!
+ *  @return A BFRadialWaveView! Aww yiss!
  */
 - (instancetype)initWithView:(UIView *)container
                      circles:(NSInteger)numberOfCircles
@@ -124,6 +124,22 @@ extern CGFloat const BFRadialWaveView_DefaultStrokeWidth;
 - (void)updateCircleColor:(UIColor *)color;
 
 
+#pragma mark - Pause and Resume
+// (Pause and Resume features graciously added by GitHub user @fco-edno !)
+/** Pause the animation. */
+- (void)pauseAnimation;
+
+/** Resume the animation. */
+- (void)resumeAnimation;
+
+/**
+ *  Custom initializer. Use this when you make a BFRadialWaveView in code.
+ *
+ *  @return Returns a BOOL flag indicating the state of the animation being either paused (YES) or not-paused (NO).
+ */
+- (BOOL)isPaused;
+
+
 #pragma mark - Fun
 /**
  *  Activate or deactivate disco mode.
@@ -131,11 +147,6 @@ extern CGFloat const BFRadialWaveView_DefaultStrokeWidth;
  *  @param on BOOL flag to turn disco mode on (YES) or off (NO).
  */
 - (void)disco:(BOOL)on;
-
-#pragma mark - Pause and Resume
--(void)pauseAnimation;
--(void)resumeAnimation;
--(BOOL)isPaused;
 
 
 #pragma mark - Properties

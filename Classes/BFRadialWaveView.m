@@ -526,6 +526,54 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
 }
 
 
+#pragma mark Pause and Resume
+// (Pause and Resume features graciously added by GitHub user @fco-edno !)
+- (void)pauseAnimation
+{
+    for (CAShapeLayer *layer in self.topCircleLayers) {
+        CFTimeInterval pausedTime = [layer convertTime:CACurrentMediaTime() fromLayer:nil];
+        layer.speed = 0.0;
+        layer.timeOffset = pausedTime;
+    };
+    
+    for (CAShapeLayer *layer in self.bottomCircleLayers) {
+        CFTimeInterval pausedTime = [layer convertTime:CACurrentMediaTime() fromLayer:nil];
+        layer.speed = 0.0;
+        layer.timeOffset = pausedTime;
+    }
+    
+    self.paused = YES;
+}
+
+- (void)resumeAnimation
+{
+    for (CAShapeLayer *layer in self.bottomCircleLayers) {
+        CFTimeInterval pausedTime = [layer timeOffset];
+        layer.speed = 1.0;
+        layer.timeOffset = 0.0;
+        layer.beginTime = 0.0;
+        CFTimeInterval timeSincePause = [layer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
+        layer.beginTime = timeSincePause;
+    }
+    
+    for (CAShapeLayer *layer in self.topCircleLayers) {
+        CFTimeInterval pausedTime = [layer timeOffset];
+        layer.speed = 1.0;
+        layer.timeOffset = 0.0;
+        layer.beginTime = 0.0;
+        CFTimeInterval timeSincePause = [layer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
+        layer.beginTime = timeSincePause;
+    }
+    
+    self.paused = NO;
+}
+
+- (BOOL)isPaused
+{
+    return self.paused;
+}
+
+
 #pragma mark Fun
 - (void)disco:(BOOL)on
 {
@@ -767,52 +815,6 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
     if (self.shouldRestartAnimationIfInterrupted) {
         [self showProgress:self.progress];
     }
-}
-
-#pragma mark - Pause and Resume
--(void)pauseAnimation
-{
-    for (CAShapeLayer *layer in self.topCircleLayers) {
-        CFTimeInterval pausedTime = [layer convertTime:CACurrentMediaTime() fromLayer:nil];
-        layer.speed = 0.0;
-        layer.timeOffset = pausedTime;
-    };
-    
-    for (CAShapeLayer *layer in self.bottomCircleLayers) {
-        CFTimeInterval pausedTime = [layer convertTime:CACurrentMediaTime() fromLayer:nil];
-        layer.speed = 0.0;
-        layer.timeOffset = pausedTime;
-    }
-    
-    self.paused = YES;
-}
-
--(void)resumeAnimation
-{
-    for (CAShapeLayer *layer in self.bottomCircleLayers) {
-        CFTimeInterval pausedTime = [layer timeOffset];
-        layer.speed = 1.0;
-        layer.timeOffset = 0.0;
-        layer.beginTime = 0.0;
-        CFTimeInterval timeSincePause = [layer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
-        layer.beginTime = timeSincePause;
-    }
-    
-    for (CAShapeLayer *layer in self.topCircleLayers) {
-        CFTimeInterval pausedTime = [layer timeOffset];
-        layer.speed = 1.0;
-        layer.timeOffset = 0.0;
-        layer.beginTime = 0.0;
-        CFTimeInterval timeSincePause = [layer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
-        layer.beginTime = timeSincePause;
-    }
-    
-    self.paused = NO;
-}
-
--(BOOL)isPaused
-{
-    return self.paused;
 }
 
 

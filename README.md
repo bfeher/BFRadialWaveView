@@ -133,6 +133,23 @@ Methods
 - (void)updateCircleColor:(UIColor *)color;
 ```
 
+### Pause and Resume  
+Pause and Resume features graciously added by GitHub user @fco-edno :)
+```objective-c
+/** Pause the animation. */
+- (void)pauseAnimation;
+
+/** Resume the animation. */
+- (void)resumeAnimation;
+
+/**
+ *  Custom initializer. Use this when you make a BFRadialWaveView in code.
+ *
+ *  @return Returns a BOOL flag indicating the state of the animation being either paused (YES) or not-paused (NO).
+ */
+- (BOOL)isPaused;
+```
+
 ### Fun
 ```objective-c
 /**
@@ -211,7 +228,7 @@ Learn more at http://cocoapods.org
 Add this to your podfile to add BFRadialWaveView to your project.
 ```ruby
 platform :ios, '7.1'
-pod 'BFRadialWaveView', '~> 1.3.8'
+pod 'BFRadialWaveView', '~> 1.4.3'
 ```
 
 
