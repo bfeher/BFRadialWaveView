@@ -133,7 +133,7 @@ extern CGFloat const BFRadialWaveView_DefaultStrokeWidth;
 - (void)resumeAnimation;
 
 /**
- *  Custom initializer. Use this when you make a BFRadialWaveView in code.
+ *  Check the paused/not-paused state of the view's animations.
  *
  *  @return Returns a BOOL flag indicating the state of the animation being either paused (YES) or not-paused (NO).
  */
