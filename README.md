@@ -134,7 +134,7 @@ Methods
 ```
 
 ### Pause and Resume  
-Pause and Resume features graciously added by GitHub user @fco-edno :)
+Pause and Resume features graciously added by GitHub user [@fco-edno](https://github.com/fco-edno) :)
 ```objective-c
 /** Pause the animation. */
 - (void)pauseAnimation;
