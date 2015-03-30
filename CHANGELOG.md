@@ -5,6 +5,11 @@ BFRadialWaveView
 > Note that this changelog was started very late, at roughly the time between version 1.1.25 and 1.2.1. Non consecutive jumps in changelog mean that there were incremental builds that weren't released as a pod, typically while solving a problem.
 
 
+1.4.3
+---------
++ + Pause and Resume! Merged pull request by github user @fco-edno, adding Pause and Resume features!
++ ^ Minor changes to comments in code (spelling).
+
 
 1.3.8
 ---------

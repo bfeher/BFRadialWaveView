@@ -159,6 +159,24 @@ BOOL showSuccess;
     [self.radialWave disco:self.discoSwitch.isOn];
 }
 
+- (IBAction)pauseAndResumePressed:(UIButton *)sender
+{
+    // I'm going to take the liberty of checking the title of the button to deduce the state (pause, play).
+    // This is not safe, I know, but this is just a demo app ;p
+    NSString *title = [sender.titleLabel.text lowercaseString];
+    if ([title isEqualToString:@"pause"]) {
+        [self.radialWave pauseAnimation];
+        [sender setTitle:@"Resume" forState:UIControlStateNormal];
+    }
+    else if ([title isEqualToString:@"resume"]) {
+        [self.radialWave resumeAnimation];
+        [sender setTitle:@"Pause" forState:UIControlStateNormal];
+    }
+    else {
+        NSLog(@"Unknown title for pause-and-resume button!! For testing purposes, fix this code or fix the title of the pause-and-resume button to be \'Pause\' and \'Resume\' ;)");
+    }
+}
+
 
 #pragma mark - Helpers
 - (void)updateProgressRadialWaveView:(BFRadialWaveView *)radialWave

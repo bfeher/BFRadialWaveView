@@ -31,6 +31,8 @@
 @property CAShapeLayer *crossLayer;
 @property BOOL atTheDisco;
 @property BOOL shouldRestartAnimationIfInterrupted;
+
+@property BOOL paused; //To check if animation is paused.
 @end
 
 @implementation BFRadialWaveView
@@ -66,6 +68,8 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
                        mode:mode
                 strokeWidth:strokeWidth
                withGradient:withGradient];
+        
+        self.paused = NO;
     }
     return self;
 }
@@ -435,6 +439,7 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
 - (void)show
 {
     [self showProgress:0];
+    self.paused = NO;
 }
 
 #pragma mark Progress
@@ -518,6 +523,54 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
         }
     }
     self.progressCircle.position = CGPointMake(self.centerPoint.x, self.centerPoint.y);
+}
+
+
+#pragma mark Pause and Resume
+// (Pause and Resume features graciously added by GitHub user @fco-edno !)
+- (void)pauseAnimation
+{
+    for (CAShapeLayer *layer in self.topCircleLayers) {
+        CFTimeInterval pausedTime = [layer convertTime:CACurrentMediaTime() fromLayer:nil];
+        layer.speed = 0.0;
+        layer.timeOffset = pausedTime;
+    };
+    
+    for (CAShapeLayer *layer in self.bottomCircleLayers) {
+        CFTimeInterval pausedTime = [layer convertTime:CACurrentMediaTime() fromLayer:nil];
+        layer.speed = 0.0;
+        layer.timeOffset = pausedTime;
+    }
+    
+    self.paused = YES;
+}
+
+- (void)resumeAnimation
+{
+    for (CAShapeLayer *layer in self.bottomCircleLayers) {
+        CFTimeInterval pausedTime = [layer timeOffset];
+        layer.speed = 1.0;
+        layer.timeOffset = 0.0;
+        layer.beginTime = 0.0;
+        CFTimeInterval timeSincePause = [layer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
+        layer.beginTime = timeSincePause;
+    }
+    
+    for (CAShapeLayer *layer in self.topCircleLayers) {
+        CFTimeInterval pausedTime = [layer timeOffset];
+        layer.speed = 1.0;
+        layer.timeOffset = 0.0;
+        layer.beginTime = 0.0;
+        CFTimeInterval timeSincePause = [layer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
+        layer.beginTime = timeSincePause;
+    }
+    
+    self.paused = NO;
+}
+
+- (BOOL)isPaused
+{
+    return self.paused;
 }
 
 
