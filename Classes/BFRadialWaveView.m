@@ -460,6 +460,7 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
     
     // Draw checkmark:
     [self removeCircles];
+    [self removeCross];
     [self drawCheckmark];
     self.shouldRestartAnimationIfInterrupted = NO;
 }
@@ -479,6 +480,7 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
     }
     // Draw 'X':
     [self removeCircles];
+    [self removeCheckmark];
     [self drawCross];
     self.shouldRestartAnimationIfInterrupted = NO;
 }
@@ -770,6 +772,11 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
                                forKey:bfDrawCheckmarkAnimationKey];
 }
 
+- (void)removeCheckmark
+{
+    [self.checkmarkLayer removeFromSuperlayer];
+}
+
 - (void)drawCross
 {
     UIBezierPath* crossPath = [UIBezierPath bezierPath];
@@ -801,6 +808,11 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
     self.crossLayer.opacity = 1.f;
     [self.crossLayer addAnimation:drawCrossAnimation
                            forKey:bfDrawCrossAnimationKey];
+}
+
+- (void)removeCross
+{
+    [self.crossLayer removeFromSuperlayer];
 }
 
 

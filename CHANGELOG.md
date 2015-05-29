@@ -5,6 +5,11 @@ BFRadialWaveView
 > Note that this changelog was started very late, at roughly the time between version 1.1.25 and 1.2.1. Non consecutive jumps in changelog mean that there were incremental builds that weren't released as a pod, typically while solving a problem.
 
 
+1.4.6
+---------
++ ^ Fixed bug where X and checkmark weren't removing themselves or each other so showing success followed by showing an error (or vice versa) resulted in both being displayed simultaneously. [Issue 3](https://github.com/bfeher/BFRadialWaveView/issues/3)
+
+
 1.4.5
 ---------
 + ^ Updated pods.
