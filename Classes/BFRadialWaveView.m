@@ -9,8 +9,6 @@
 #import "BFRadialWaveView.h"
 // Classes:
 #import "BFGradientCALayer.h"
-// Pods:
-#import "UIColor+BFPaperColors.h"
 
 
 @interface BFRadialWaveView ()
@@ -85,7 +83,7 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
     [self repositionCircles];
     
     CGRect gradientFrame;
-    if ([UIColor isColorClear:self.container.backgroundColor]) {
+    if ([self isColorClear:self.container.backgroundColor]) {
         gradientFrame = [[[UIApplication sharedApplication] keyWindow] bounds];
         gradientFrame.size.height += (CGRectGetMidY(self.container.bounds) - self.centerPoint.y) + BFRadialWaveView_BackgroundPadding;
     }
@@ -231,7 +229,7 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     self.container = container;
     self.circleCount = numberOfCircles;
-    self.circleColor = circleColor ? circleColor : [UIColor paperColorGray50];
+    self.circleColor = circleColor ? circleColor : [UIColor colorWithRed:250.f/255.f green:250.f/255.f blue:250.f/255.f alpha:1];
     self.lineWidth = lineWidth;
     self.mode = mode;
     self.centerPoint = CGPointMake(CGRectGetMidX(self.bounds),
@@ -254,7 +252,7 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
         self.radialGradientLayer = [BFGradientCALayer new];
         
         CGRect gradientFrame;
-        if ([UIColor isColorClear:self.container.backgroundColor]) {
+        if ([self isColorClear:self.container.backgroundColor]) {
             gradientFrame = [[[UIApplication sharedApplication] keyWindow] bounds];
             gradientFrame.size.height += (CGRectGetMidY(self.container.bounds) - self.centerPoint.y) + BFRadialWaveView_BackgroundPadding;
         }
@@ -645,13 +643,13 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
                    atIndex:(NSInteger)index
 {
     // Use default colors of self.discoColors doesn't exist:
-    NSArray *colors = self.discoColors ? self.discoColors : @[[UIColor paperColorRedA400],
-                                                              [UIColor paperColorOrangeA400],
-                                                              [UIColor paperColorYellowA400],
-                                                              [UIColor paperColorGreenA400],
-                                                              [UIColor paperColorBlueA400],
-                                                              [UIColor paperColorIndigoA400],
-                                                              [UIColor paperColorPurpleA400]];
+    NSArray *colors = self.discoColors ? self.discoColors : @[[UIColor colorWithRed:1 green:23.f/255.f blue:68.f/255.f alpha:1],
+                                                              [UIColor colorWithRed:1 green:145.f/255.f blue:0 alpha:1],
+                                                              [UIColor colorWithRed:1 green:234.f/255.f blue:0 alpha:1],
+                                                              [UIColor colorWithRed:0 green:230.f/255.f blue:118.f/255.f alpha:1],
+                                                              [UIColor colorWithRed:41.f/255.f green:121.f/255.f blue:1 alpha:1],
+                                                              [UIColor colorWithRed:61.f/255.f green:90.f/255.f blue:254.f/255.f alpha:1],
+                                                              [UIColor colorWithRed:213.f/255.f green:0 blue:249.f/255.f alpha:1]];
     
     NSInteger colorCount = colors.count;
     NSMutableArray *animationsArray = [NSMutableArray array];
@@ -829,5 +827,33 @@ static NSString *const bfFadeProgressCircleInKey     = @"fadeProgressCircleIn.ke
     }
 }
 
+
+#pragma mark - Private Helpers
+- (BOOL)isColorClear:(UIColor *)color
+{
+    if (color == [UIColor clearColor]) {
+        return YES;
+    }
+    
+    NSUInteger totalComponents = CGColorGetNumberOfComponents(color.CGColor);
+    BOOL isGreyscale = (totalComponents == 2) ? YES : NO;
+    CGFloat *components = (CGFloat *)CGColorGetComponents(color.CGColor);
+    if (!components) {
+        return YES;
+    }
+    
+    if(isGreyscale) {
+        if (components[1] <= 0) {
+            return YES;
+        }
+    }
+    else {
+        if (components[3] <= 0) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
 
 @end

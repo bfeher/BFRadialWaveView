@@ -9,8 +9,6 @@
 #import "ViewController.h"
 // Classes:
 #import "BFRadialWaveView.h"
-// Pods:
-#import "UIColor+BFPaperColors.h"
 
 
 @interface ViewController ()

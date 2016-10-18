@@ -15,7 +15,6 @@
 		F4BF576E1A942001008A2BC2 /* BFRadialWaveViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BF576D1A942001008A2BC2 /* BFRadialWaveViewTests.m */; };
 		F4BF577A1A94253A008A2BC2 /* BFRadialWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BF57791A94253A008A2BC2 /* BFRadialWaveView.m */; };
 		F4BF577E1A942572008A2BC2 /* BFGradientCALayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BF577D1A942572008A2BC2 /* BFGradientCALayer.m */; };
-		FF666335FFB1BC6376BFF2CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B323FD86AD9296834C3771 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,9 +28,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		19B323FD86AD9296834C3771 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		1CB8CB9565B602DFFCF37D10 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		8A350E6929C7BB297661AB91 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F4BF574E1A942001008A2BC2 /* BFRadialWaveView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BFRadialWaveView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BF57521A942001008A2BC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4BF57531A942001008A2BC2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -55,7 +51,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF666335FFB1BC6376BFF2CA /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,31 +64,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4D91EBC0BFFC7459AD8B3123 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				19B323FD86AD9296834C3771 /* libPods.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D9ED4FD9975EFBE8692097E2 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1CB8CB9565B602DFFCF37D10 /* Pods.debug.xcconfig */,
-				8A350E6929C7BB297661AB91 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		F4BF57451A942001008A2BC2 = {
 			isa = PBXGroup;
 			children = (
 				F4BF57501A942001008A2BC2 /* BFRadialWaveView */,
 				F4BF576A1A942001008A2BC2 /* BFRadialWaveViewTests */,
 				F4BF574F1A942001008A2BC2 /* Products */,
-				D9ED4FD9975EFBE8692097E2 /* Pods */,
-				4D91EBC0BFFC7459AD8B3123 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,12 +141,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4BF57711A942001008A2BC2 /* Build configuration list for PBXNativeTarget "BFRadialWaveView" */;
 			buildPhases = (
-				0E46AFF9336A05379381C606 /* Check Pods Manifest.lock */,
 				F4BF574A1A942001008A2BC2 /* Sources */,
 				F4BF574B1A942001008A2BC2 /* Frameworks */,
 				F4BF57771A94205C008A2BC2 /* ShellScript */,
 				F4BF574C1A942001008A2BC2 /* Resources */,
-				35B573B1B6D8DBAAD30E59BD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,7 +179,7 @@
 		F4BF57461A942001008A2BC2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Bence Feher";
 				TargetAttributes = {
 					F4BF574D1A942001008A2BC2 = {
@@ -256,36 +230,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0E46AFF9336A05379381C606 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		35B573B1B6D8DBAAD30E59BD /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F4BF57771A94205C008A2BC2 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -357,15 +301,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -398,8 +346,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -407,6 +357,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -422,12 +373,11 @@
 		};
 		F4BF57721A942001008A2BC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1CB8CB9565B602DFFCF37D10 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = BFRadialWaveView/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
@@ -435,18 +385,18 @@
 					"-ObjC",
 					"-l\"Pods-UIColor+BFPaperColors\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.bencefeher.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		F4BF57731A942001008A2BC2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A350E6929C7BB297661AB91 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = BFRadialWaveView/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
@@ -454,6 +404,7 @@
 					"-ObjC",
 					"-l\"Pods-UIColor+BFPaperColors\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.bencefeher.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -472,6 +423,7 @@
 				);
 				INFOPLIST_FILE = BFRadialWaveViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.bencefeher.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BFRadialWaveView.app/BFRadialWaveView";
 			};
@@ -487,6 +439,7 @@
 				);
 				INFOPLIST_FILE = BFRadialWaveViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.bencefeher.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BFRadialWaveView.app/BFRadialWaveView";
 			};

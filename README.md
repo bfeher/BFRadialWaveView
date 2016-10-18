@@ -211,7 +211,7 @@ radialWaveView = [[BFRadialWaveView alloc] initWithView:self.view
 BFRadialWaveView *radialWaveView;
 radialWaveView = [[BFRadialWaveView alloc] initWithView:self.view
                                                 circles:10
-                                                  color:[UIColor paperColorGray800]
+                                                  color:[UIColor darkGray]
                                                    mode:BFRadialWaveViewMode_North
                                             strokeWidth:5.f
                                            withGradient:NO];
@@ -228,7 +228,7 @@ Learn more at http://cocoapods.org
 Add this to your podfile to add BFRadialWaveView to your project.
 ```ruby
 platform :ios, '7.1'
-pod 'BFRadialWaveView', '~> 1.4.6'
+pod 'BFRadialWaveView'
 ```
 
 
