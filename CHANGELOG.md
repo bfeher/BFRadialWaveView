@@ -7,8 +7,9 @@ BFRadialWaveView
 
 1.5.0
 ---------
-* (^) Updated CocoaPods
+* (^) Updated Project for Xcode 8.
 * (-) Removed UIColor+BFPaperColors pod.
+* (-) Removed .xcworkspace.
 
 
 1.4.6

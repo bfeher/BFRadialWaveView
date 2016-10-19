@@ -383,7 +383,6 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
-					"-l\"Pods-UIColor+BFPaperColors\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.bencefeher.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -402,7 +401,6 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
-					"-l\"Pods-UIColor+BFPaperColors\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.bencefeher.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

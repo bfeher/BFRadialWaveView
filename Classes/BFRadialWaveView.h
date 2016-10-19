@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 typedef NS_ENUM(NSInteger, BFRadialWaveViewMode) {
     BFRadialWaveViewMode_Default,       // Default: A swirly looking thing.
     BFRadialWaveViewMode_KuneKune,      // Kune Kune: A creepy feeler looking thing.
@@ -42,8 +43,11 @@ extern CGFloat const BFRadialWaveView_DefaultStrokeWidth;
 - (void)errorCompletionWithRadialWaveView:(BFRadialWaveView *)sender;
 @end
 
-
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < 100000
 @interface BFRadialWaveView : UIView
+#else
+@interface BFRadialWaveView : UIView <CAAnimationDelegate>
+#endif
 #pragma mark - Custom Initializers
 /**
  *  Custom initializer. Use this when you make a BFRadialWaveView in code.
